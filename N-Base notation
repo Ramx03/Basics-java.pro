@@ -1,0 +1,26 @@
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner (System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        System.out.print(Base (n,m));
+        
+    }
+    public static String Base(int n , int m){
+     
+      StringBuilder s=new StringBuilder();
+        while(m>0){
+           int r=m%n;
+            if(r<10){
+                s.insert(0,r);
+            }
+            else{
+                s.insert(0,(char)('A'+(r-10)));
+            }
+            m/=n;
+        }
+        return s.toString();
+    }
+}
